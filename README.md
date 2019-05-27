@@ -7,5 +7,14 @@ for what this project is and how it works.
 
 ```sh
 npm install
-npm run build
+npm start <port-number> # e.g., npm start 8080
+```
+
+Then go to a deployed environment and run the following in the browser console:
+
+```js
+importMapOverrides.addOverride(
+  "@openmrs/root-config",
+  "http://localhost:8081/root-config-dist.js"
+);
 ```

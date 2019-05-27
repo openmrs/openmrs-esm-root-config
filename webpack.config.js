@@ -4,7 +4,7 @@ module.exports = {
   entry: __dirname + "/src/root-config-dist.js",
   devtool: "sourcemap",
   output: {
-    filename: "root-config-dist.js",
+    filename: "root-config.js",
     path: path.resolve(__dirname, "dist"),
     libraryTarget: "system"
   },
@@ -20,6 +20,11 @@ module.exports = {
         exclude: /(node_modules|bower_components)/
       }
     ]
+  },
+  devServer: {
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
   },
   externals: ["single-spa"],
   plugins: []
