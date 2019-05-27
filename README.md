@@ -15,6 +15,6 @@ Then go to a deployed environment and run the following in the browser console:
 ```js
 importMapOverrides.addOverride(
   "@openmrs/root-config",
-  "http://localhost:8081/root-config-dist.js"
+  "http://localhost:8080/root-config-dist.js"
 );
 ```
