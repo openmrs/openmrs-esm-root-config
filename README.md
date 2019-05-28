@@ -1,8 +1,8 @@
 # openmrs-esm-root-config
 
-`@openmrs/root-config`
-
 [![Build Status](https://travis-ci.org/openmrs/openmrs-esm-root-config.svg?branch=master)](https://travis-ci.org/openmrs/openmrs-esm-root-config)
+
+`@openmrs/root-config`
 
 A javascript module for setting up and configuring your SPA. See [openmrs-rfc-frontend](https://github.com/openmrs/openmrs-rfc-frontend)
 for what this project is and how it works.
