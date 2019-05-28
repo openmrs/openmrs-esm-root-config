@@ -19,4 +19,4 @@ deploy:
     branch: master
 after_deploy:
   - echo "Updating import map to point to new version of @openmrs/root-config"
-  - curl -u $DEPLOYER_USERNAME:$DEPLOYER_PASSWORD -d '{ "service":"@openmrs/root-config","url":"https://spa-modules.nyc3.digitaloceanspaces.com/devtools/'$TRAVIS_COMMIT'/root-config.js" }' -X PATCH http://157.230.2.186:5000/services\?env=prod -H "Accept:application/json" -H "Content-Type:application/json" --fail
+  - curl -u $DEPLOYER_USERNAME:$DEPLOYER_PASSWORD -d '{ "service":"@openmrs/root-config","url":"https://spa-modules.nyc3.digitaloceanspaces.com/devtools/'$TRAVIS_COMMIT'/root-config.js" }' -X PATCH $DEPLOYER_HOST/services\?env=prod -H "Accept:application/json" -H "Content-Type:application/json" --fail
