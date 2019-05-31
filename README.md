@@ -14,11 +14,11 @@ npm install
 npm start <port-number> # e.g., npm start 8080
 ```
 
-Then go to a deployed environment and run the following in the browser console:
+Then go to a deployed environment (such as https://openmrs-spa.org/openmrs/spa) and run the following in the browser console:
 
 ```js
 importMapOverrides.addOverride(
   "@openmrs/root-config",
-  "http://localhost:8080/root-config-dist.js"
+  "http://localhost:<port-number>/root-config-dist.js"
 );
 ```
