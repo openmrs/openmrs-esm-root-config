@@ -5,13 +5,15 @@
   "main": "dist/root-config-lib.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "webpack-dev-server --port",
+    "start": "webpack-dev-server",
     "test": "jest",
+    "check-format": "pretty-quick --check",
+    "lint": "eslint src",
     "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/root-config-lib.js --output-filename=root-config-lib.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged && npm run lint && npm test"
     }
   },
   "repository": {
@@ -26,9 +28,12 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "copyfiles": "^2.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-important-stuff": "^1.0.0",
     "husky": "^2.3.0",
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
