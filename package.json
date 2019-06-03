@@ -5,7 +5,7 @@
   "main": "dist/root-config-lib.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "webpack-dev-server --port",
+    "start": "webpack-dev-server",
     "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/root-config-lib.js --output-filename=root-config-lib.js"
   },
   "husky": {
