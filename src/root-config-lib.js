@@ -1,7 +1,8 @@
 import { registerApplication } from "single-spa";
 
 const coreApplications = {
-  "@openmrs/devtools": () => localStorage.getItem("openmrs:devtools")
+  "@openmrs/devtools": () => localStorage.getItem("openmrs:devtools"),
+  "@openmrs/login": location => location.pathname.startsWith("/openmrs/login")
 };
 
 export function registerAllCoreApplications() {
