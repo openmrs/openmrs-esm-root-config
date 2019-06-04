@@ -24,7 +24,8 @@ module.exports = {
   devServer: {
     headers: {
       "Access-Control-Allow-Origin": "*"
-    }
+    },
+    disableHostCheck: true
   },
   externals: ["single-spa"],
   plugins: []

@@ -4,6 +4,7 @@ node_js:
 script:
   - npm run lint
   - npm test
+  - npm run check-format
   - npm run build
   - echo "Folder name in Digital Ocean Spaces - $TRAVIS_COMMIT"
   - mkdir -p dist/root-config/$TRAVIS_COMMIT
@@ -17,8 +18,9 @@ deploy:
   cache-control: "max-age=31536000"
   local_dir: dist
   skip_cleanup: true
+  acl: public_read
   on:
     branch: master
 after_deploy:
   - echo "Updating import map to point to new version of @openmrs/root-config"
-  - curl -u $DEPLOYER_USERNAME:$DEPLOYER_PASSWORD -d '{ "service":"@openmrs/root-config","url":"https://spa-modules.nyc3.digitaloceanspaces.com/devtools/'$TRAVIS_COMMIT'/root-config.js" }' -X PATCH $DEPLOYER_HOST/services\?env=prod -H "Accept:application/json" -H "Content-Type:application/json" --fail
+  - curl -u $DEPLOYER_USERNAME:$DEPLOYER_PASSWORD -d '{ "service":"@openmrs/root-config","url":"https://spa-modules.nyc3.digitaloceanspaces.com/root-config/'$TRAVIS_COMMIT'/root-config.js" }' -X PATCH $DEPLOYER_HOST/services\?env=prod -H "Accept:application/json" -H "Content-Type:application/json" --fail
