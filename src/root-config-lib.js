@@ -1,6 +1,9 @@
 import { registerApplication } from "single-spa";
 
 const coreApplications = {
+  "@openmrs/login": location =>
+    location.pathname.startsWith("/openmrs/login") ||
+    location.pathname.startsWith("/openmrs/spa/login"),
   "@openmrs/devtools": () => localStorage.getItem("openmrs:devtools")
 };
 

@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - node
 script:
+  - npm run lint
+  - npm test
   - npm run build
   - echo "Folder name in Digital Ocean Spaces - $TRAVIS_COMMIT"
   - mkdir -p dist/root-config/$TRAVIS_COMMIT
