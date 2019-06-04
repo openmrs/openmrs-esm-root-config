@@ -15,7 +15,9 @@ describe(`root-config-lib`, () => {
     expect(appForRoute("@openmrs/login", "/openmrs/login")).toBe(true);
     expect(appForRoute("@openmrs/login", "/openmrs/spa/login")).toBe(true);
     expect(appForRoute("@openmrs/login", "/openmrs")).toBe(false);
-    expect(appForRoute("@openmrs/something-else", "/openmrs")).toBe(false);
+    expect(appForRoute("@openmrs/login", "/openmrs/something-else")).toBe(
+      false
+    );
   });
 });
 
