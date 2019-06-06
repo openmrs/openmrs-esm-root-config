@@ -33,7 +33,7 @@ export function registerCoreApplicationsExcept(names) {
         () => System.import(appName),
         coreApplications[appName]
       );
-      registeredApps.poush(appName);
+      registeredApps.push(appName);
     }
   });
 
