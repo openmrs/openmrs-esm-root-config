@@ -4,7 +4,6 @@ node_js:
 script:
   - npm run lint
   - npm test
-  - npm run check-format
   - npm run build
   - echo "Folder name in Digital Ocean Spaces - $TRAVIS_COMMIT"
   - mkdir -p dist/root-config/$TRAVIS_COMMIT
