@@ -1,15 +1,21 @@
 import { registerApplication } from "single-spa";
 
 const coreApplications = {
-  "@openmrs/login": location =>
-    location.pathname.startsWith("/openmrs/login") ||
-    location.pathname.startsWith("/openmrs/spa/login"),
+  "@openmrs/login": loginActive,
   "@openmrs/devtools": () => localStorage.getItem("openmrs:devtools"),
+  "@hackathon/navbar": location => !loginActive(location),
   "@hackathon/patient-dashboard": location =>
     location.pathname.startsWith("/openmrs/spa/patient-dashboard"),
   "@hackathon/patient-search": location =>
     location.pathname.startsWith("/openmrs/spa/patient-search")
 };
+
+function loginActive(location) {
+  return (
+    location.pathname.startsWith("/openmrs/login") ||
+    location.pathname.startsWith("/openmrs/spa/login")
+  );
+}
 
 export function registerAllCoreApplications() {
   Object.keys(coreApplications).forEach(coreAppName => {
