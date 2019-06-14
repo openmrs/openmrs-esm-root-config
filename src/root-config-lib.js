@@ -6,7 +6,9 @@ const coreApplications = {
     location.pathname.startsWith("/openmrs/spa/login"),
   "@openmrs/devtools": () => localStorage.getItem("openmrs:devtools"),
   "@hackathon/patient-dashboard": location =>
-    location.pathname.startsWith("/openmrs/spa/patient-dashboard")
+    location.pathname.startsWith("/openmrs/spa/patient-dashboard"),
+  "@hackathon/patient-search": () => location =>
+    location.pathname.startsWith("/openmrs/spa/patient-search")
 };
 
 export function registerAllCoreApplications() {
