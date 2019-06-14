@@ -27,6 +27,9 @@ module.exports = {
     },
     disableHostCheck: true
   },
-  externals: ["single-spa"],
+  externals: {
+    "single-spa": "single-spa",
+    "zone.js": "https://unpkg.com/zone.js@0.9.1/dist/zone.js"
+  },
   plugins: []
 };

@@ -1,3 +1,6 @@
+// For angular
+import "zone.js";
+
 import { registerAllCoreApplications } from "./root-config-lib";
 import { start } from "single-spa";
 
