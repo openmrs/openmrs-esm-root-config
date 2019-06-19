@@ -7,7 +7,7 @@
     "clean": "rimraf dist",
     "start": "webpack-dev-server",
     "test": "jest",
-    "lint": "eslint src --fix",
+    "lint": "eslint src",
     "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/root-config-lib.js --output-filename=root-config-lib.js"
   },
   "husky": {
