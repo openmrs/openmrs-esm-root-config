@@ -13,7 +13,8 @@
   --white: #ffffff;
 }
 
-html {
+html,
+body {
   background-color: #f4f5f8;
 }
 
