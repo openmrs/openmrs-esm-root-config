@@ -19,6 +19,6 @@ Then go to a deployed environment (such as https://openmrs-spa.org/openmrs/spa) 
 ```js
 importMapOverrides.addOverride(
   "@openmrs/root-config",
-  "http://localhost:<port-number>/root-config-dist.js"
+  "https://localhost:<port-number>/root-config.js"
 );
 ```
