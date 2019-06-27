@@ -2,13 +2,14 @@
   "name": "@openmrs/root-config",
   "version": "1.0.0",
   "description": "A javascript module for setting up and configuring your SPA ",
-  "main": "dist/root-config-lib.js",
+  "main": "dist/root-config.js",
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-dev-server",
     "test": "jest",
-    "lint": "eslint src --fix",
-    "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/root-config-lib.js --output-filename=root-config-lib.js"
+    "lint": "eslint src",
+    "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/root-config-lib.js --output-filename=root-config-lib.js --output-library-target commonjs",
+    "prepare": "npm run build"
   },
   "husky": {
     "hooks": {

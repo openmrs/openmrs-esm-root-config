@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: __dirname + "/src/root-config-dist.js",
+  entry: __dirname + "/src/root-config.js",
   devtool: "sourcemap",
   output: {
     filename: "root-config.js",
