@@ -1,11 +1,17 @@
 import { registerApplication } from "single-spa";
 
 const coreApplications = {
-  "@openmrs/login": location =>
-    location.pathname.startsWith("/openmrs/login") ||
-    location.pathname.startsWith("/openmrs/spa/login"),
+  "@openmrs/login": loginActive,
   "@openmrs/devtools": () => localStorage.getItem("openmrs:devtools")
 };
+
+export function routePrefix(prefix, location) {
+  return location.pathname.startsWith(window.getOpenmrsSpaBase() + prefix);
+}
+
+function loginActive(location) {
+  return routePrefix("login", location);
+}
 
 export function registerAllCoreApplications() {
   Object.keys(coreApplications).forEach(coreAppName => {
