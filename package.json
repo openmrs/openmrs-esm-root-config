@@ -11,6 +11,9 @@
     "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/openmrs-esm-root-config.lib.js --output-filename openmrs-esm-root-config.lib.js --output-library-target commonjs",
     "prepublishOnly": "npm run build"
   },
+  "browserslist": [
+    "extends browserslist-config-openmrs"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && npm run lint && npm test"
@@ -31,6 +34,7 @@
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "browserslist-config-openmrs": "^1.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "copyfiles": "^2.1.1",
     "eslint": "^5.16.0",
