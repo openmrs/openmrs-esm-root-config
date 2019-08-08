@@ -1,16 +1,8 @@
 import { registerApplication } from "single-spa";
-
-const coreApplications = {
-  "@openmrs/login": loginActive,
-  "@openmrs/devtools": () => localStorage.getItem("openmrs:devtools")
-};
+import { coreApplications } from "./single-spa-applications/core-applications";
 
 export function routePrefix(prefix, location) {
   return location.pathname.startsWith(window.getOpenmrsSpaBase() + prefix);
-}
-
-function loginActive(location) {
-  return routePrefix("login", location);
 }
 
 export function registerAllCoreApplications() {
@@ -46,5 +38,5 @@ export function registerCoreApplicationsExcept(names) {
   return registeredApps;
 }
 
-export { getPublicPath } from "./public-path-helpers";
-export { getModuleUrl } from "./public-path-helpers";
+export { getPublicPath } from "./public-path/public-path-helpers";
+export { getModuleUrl } from "./public-path/public-path-helpers";
