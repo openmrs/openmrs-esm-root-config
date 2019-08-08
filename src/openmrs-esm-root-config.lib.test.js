@@ -22,6 +22,42 @@ describe(`openmrs-esm-root-config.lib`, () => {
       appForRoute("@openmrs/esm-login", "/openmrs/spa/something-else")
     ).toBe(false);
   });
+
+  it(`correctly routes the primary navigation`, () => {
+    expect(
+      appForRoute("@openmrs/esm-primary-navigation", "/openmrs/spa/login")
+    ).toBe(false);
+    expect(
+      appForRoute(
+        "@openmrs/esm-primary-navigation",
+        "/openmrs/spa/patient/4f5sd67fds56f54/dashboard"
+      )
+    ).toBe(true);
+    expect(
+      appForRoute(
+        "@openmrs/esm-primary-navigation",
+        "/openmrs/spa/something-totally-random"
+      )
+    ).toBe(true);
+  });
+
+  it(`correctly routes the patient dashboard`, () => {
+    expect(
+      appForRoute("@openmrs/esm-patient-dashboard", "/openmrs/spa/login")
+    ).toBe(false);
+    expect(
+      appForRoute(
+        "@openmrs/esm-patient-dashboard",
+        "/openmrs/spa/patient/7fs8d98f7s8f7sdt67f8s/dashboard"
+      )
+    ).toBe(true);
+    expect(
+      appForRoute(
+        "@openmrs/esm-patient-dashboard",
+        "/openmrs/spa/something-totally-random"
+      )
+    ).toBe(false);
+  });
 });
 
 function appForRoute(appName, route) {
