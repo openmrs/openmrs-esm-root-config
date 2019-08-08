@@ -2,13 +2,13 @@
   "name": "@openmrs/esm-root-config",
   "version": "1.0.0",
   "description": "A javascript module for setting up and configuring your SPA ",
-  "main": "dist/root-config.js",
+  "main": "dist/openmrs-esm-root-config.defaults.js",
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-dev-server",
     "test": "jest",
     "lint": "eslint src",
-    "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/root-config-lib.js --output-filename=root-config-lib.js --output-library-target commonjs",
+    "build": "npm run clean && webpack --mode=development && webpack --mode=development --entry ./src/openmrs-esm-root-config.lib.js --output-filename openmrs-esm-root-config.lib.js --output-library-target commonjs",
     "prepublishOnly": "npm run build"
   },
   "husky": {
@@ -48,6 +48,6 @@
   },
   "dependencies": {
     "@types/jest": "^24.0.13",
-    "single-spa": "^4.3.4"
+    "single-spa": "^4.3.7"
   }
 }

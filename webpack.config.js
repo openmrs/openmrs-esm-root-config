@@ -1,10 +1,10 @@
 const path = require("path");
 
 module.exports = {
-  entry: __dirname + "/src/root-config.js",
+  entry: __dirname + "/src/openmrs-esm-root-config.defaults.js",
   devtool: "sourcemap",
   output: {
-    filename: "root-config.js",
+    filename: "openmrs-esm-root-config.defaults.js",
     path: path.resolve(__dirname, "dist"),
     libraryTarget: "system"
   },
