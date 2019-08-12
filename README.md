@@ -11,7 +11,7 @@ for what this project is and how it works.
 
 ```sh
 npm install
-npm start <port-number> # e.g., npm start --port 8080
+npm start <port-number> # e.g., npm start -- --port 8080
 ```
 
 Then go to a deployed environment (such as https://openmrs-spa.org/openmrs/spa) and run the following in the browser console:
