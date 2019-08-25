@@ -58,6 +58,20 @@ describe(`openmrs-esm-root-config.lib`, () => {
       )
     ).toBe(false);
   });
+
+  it(`correctly routes the home app`, () => {
+    expect(appForRoute("@openmrs/esm-home", "/openmrs/spa/home")).toBe(true);
+    expect(
+      appForRoute("@openmrs/esm-home", "/openmrs/spa/home/patient-search")
+    ).toBe(true);
+    expect(
+      appForRoute(
+        "@openmrs/esm-home",
+        "/openmrs/spa/patient/5fsad678fd6ss7/dashboard"
+      )
+    ).toBe(false);
+    expect(appForRoute("@openmrs/esm-home", "/openmrs/spa/login")).toBe(false);
+  });
 });
 
 function appForRoute(appName, route) {
