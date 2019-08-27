@@ -1,8 +1,6 @@
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
-
 module.exports = {
-  entry: __dirname + "/src/openmrs-esm-root-config.defaults.js",
+  entry: path.resolve(__dirname, "src/openmrs-esm-root-config.defaults.js"),
   devtool: "sourcemap",
   output: {
     filename: "openmrs-esm-root-config.defaults.js",
@@ -29,5 +27,5 @@ module.exports = {
     disableHostCheck: true
   },
   externals: ["single-spa"],
-  plugins: [new CleanWebpackPlugin()]
+  plugins: []
 };
