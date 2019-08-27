@@ -8,7 +8,7 @@
     "start": "webpack-dev-server",
     "test": "jest",
     "lint": "eslint src",
-    "build": "webpack --mode production && webpack --entry ./src/openmrs-esm-root-config.lib.js --output-filename openmrs-esm-root-config.lib.js  --output-library-target commonjs"
+    "build": "webpack --mode production && webpack --entry ./src/openmrs-esm-root-config.lib.js --output-filename openmrs-esm-root-config.lib.js  --output-library-target commonjs",
     "prepublishOnly": "npm run build"
   },
   "browserslist": [
