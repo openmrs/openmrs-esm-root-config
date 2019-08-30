@@ -19,7 +19,9 @@ function shouldShowDevtools() {
 }
 
 function shouldShowPrimaryNavigation(location) {
-  return !shouldShowLogin(location);
+  return (
+    !shouldShowLogin(location) && !routePrefix("home/patient-search", location)
+  );
 }
 
 function shouldShowPatientDashboard(location) {
