@@ -49,10 +49,11 @@
     "rimraf": "^2.6.3",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
     "@types/jest": "^24.0.17",
+    "rxjs": "^6.5.3",
     "single-spa": "^4.3.7"
   }
 }

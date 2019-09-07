@@ -21,11 +21,17 @@ export function getPublicPath(name) {
   }
 }
 
-const originalResolve = window.System.resolve;
+const originalResolve = System.resolve;
 
-window.System.resolve = function(name) {
-  return originalResolve.apply(this, arguments).then(function(resolved) {
-    moduleMap[name] = resolved;
-    return resolved;
-  });
+System.resolve = function(name) {
+  const result = originalResolve.apply(this, arguments);
+  if (result instanceof Promise) {
+    return result.then(function(resolved) {
+      moduleMap[name] = resolved;
+      return resolved;
+    });
+  } else {
+    moduleMap[name] = result;
+    return result;
+  }
 };
