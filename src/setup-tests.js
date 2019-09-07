@@ -1,3 +1,4 @@
 window.System = {
-  resolve: jest.fn()
+  resolve: jest.fn(),
+  register: jest.fn()
 };

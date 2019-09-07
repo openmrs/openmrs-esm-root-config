@@ -28,6 +28,6 @@ module.exports = {
     },
     disableHostCheck: true
   },
-  externals: ["single-spa"],
+  externals: ["single-spa", "rxjs"],
   plugins: [new CleanWebpackPlugin()]
 };

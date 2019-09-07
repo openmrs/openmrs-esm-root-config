@@ -1,3 +1,4 @@
+import "./rxjs-compat/rxjs-modules";
 import { registerApplication } from "single-spa";
 import { coreApplications } from "./single-spa-applications/core-applications";
 
