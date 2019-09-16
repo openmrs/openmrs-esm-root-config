@@ -1,3 +1,4 @@
+import "./set-public-path";
 import { registerAllCoreApplications } from "./openmrs-esm-root-config.lib";
 import { start } from "single-spa";
 
