@@ -1,15 +1,6 @@
 const configs = []
 const schemas = {}
 
-import(/* webpackIgnore: true */ "@openmrs/config")
-  .then(res => {
-    console.log(res);
-    configs.push(res);
-  })
-  .catch(err => {
-    console.log("No importable config provided. No sweat.");
-  })
-
 export function loadConfig(moduleName) {
   console.log("Taking schema for " + moduleName);
   schemas[moduleName] = "foo";
