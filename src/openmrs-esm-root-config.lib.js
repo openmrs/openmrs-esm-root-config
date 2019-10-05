@@ -46,5 +46,7 @@ export function registerCoreApplicationsExcept(names) {
   return registeredApps;
 }
 
+export * from "./config-lib/config-lib";
+
 export { getPublicPath } from "./public-path/public-path-helpers";
 export { getModuleUrl } from "./public-path/public-path-helpers";
