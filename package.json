@@ -2,7 +2,7 @@
   "name": "@openmrs/esm-root-config",
   "version": "1.1.1",
   "description": "A javascript module for setting up and configuring your SPA ",
-  "main": "dist/openmrs-esm-root-config.defaults.js",
+  "main": "dist/openmrs-esm-root-config.lib.js",
   "scripts": {
     "clean": "rimraf dist",
     "start": "webpack-dev-server --mode=development",
