@@ -4,7 +4,7 @@ export const coreApplications = {
   "@openmrs/esm-login": shouldShowLogin,
   "@openmrs/esm-devtools": shouldShowDevtools,
   "@openmrs/esm-primary-navigation": shouldShowPrimaryNavigation,
-  "@openmrs/esm-patient-dashboard": shouldShowPatientDashboard,
+  "@openmrs/esm-patient-chart": shouldShowPatientChart,
   "@openmrs/esm-home": shouldShowHome
 };
 
@@ -22,8 +22,8 @@ function shouldShowPrimaryNavigation(location) {
   return !shouldShowLogin(location);
 }
 
-function shouldShowPatientDashboard(location) {
-  return routeRegex(/^patient\/.+\/dashboard/, location);
+function shouldShowPatientChart(location) {
+  return routeRegex(/^patient\/.+\/chart/, location);
 }
 
 function shouldShowHome(location) {
