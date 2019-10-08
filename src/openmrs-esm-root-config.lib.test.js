@@ -30,7 +30,7 @@ describe(`openmrs-esm-root-config.lib`, () => {
     expect(
       appForRoute(
         "@openmrs/esm-primary-navigation",
-        "/openmrs/spa/patient/4f5sd67fds56f54/dashboard"
+        "/openmrs/spa/patient/4f5sd67fds56f54/chart"
       )
     ).toBe(true);
     expect(
@@ -41,19 +41,19 @@ describe(`openmrs-esm-root-config.lib`, () => {
     ).toBe(true);
   });
 
-  it(`correctly routes the patient dashboard`, () => {
+  it(`correctly routes the patient chart`, () => {
     expect(
-      appForRoute("@openmrs/esm-patient-dashboard", "/openmrs/spa/login")
+      appForRoute("@openmrs/esm-patient-chart", "/openmrs/spa/login")
     ).toBe(false);
     expect(
       appForRoute(
-        "@openmrs/esm-patient-dashboard",
-        "/openmrs/spa/patient/7fs8d98f7s8f7sdt67f8s/dashboard"
+        "@openmrs/esm-patient-chart",
+        "/openmrs/spa/patient/7fs8d98f7s8f7sdt67f8s/chart"
       )
     ).toBe(true);
     expect(
       appForRoute(
-        "@openmrs/esm-patient-dashboard",
+        "@openmrs/esm-patient-chart",
         "/openmrs/spa/something-totally-random"
       )
     ).toBe(false);
@@ -67,7 +67,7 @@ describe(`openmrs-esm-root-config.lib`, () => {
     expect(
       appForRoute(
         "@openmrs/esm-home",
-        "/openmrs/spa/patient/5fsad678fd6ss7/dashboard"
+        "/openmrs/spa/patient/5fsad678fd6ss7/chart"
       )
     ).toBe(false);
     expect(appForRoute("@openmrs/esm-home", "/openmrs/spa/login")).toBe(false);
