@@ -5,7 +5,7 @@
   "main": "dist/openmrs-esm-root-config.lib.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "webpack-dev-server --mode=development",
+    "start": "webpack-dev-server",
     "test": "jest",
     "lint": "eslint src",
     "build": "npm run clean && webpack --mode production && webpack --entry ./src/openmrs-esm-root-config.lib.js --output-filename openmrs-esm-root-config.lib.js  --output-library-target commonjs",
@@ -57,7 +57,6 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "rxjs": "^6.5.3",
     "single-spa": "^4.4.1"
   }
 }
