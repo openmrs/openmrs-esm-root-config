@@ -1,10 +1,10 @@
 import i18n from "i18next";
-import i18nextBackend from "i18next-xhr-backend";
+import i18nextXhrBackend from "i18next-xhr-backend";
 import { initReactI18next } from "react-i18next";
 import ICU from "i18next-icu";
 
 (i18n.default || i18n)
-  .use(i18nextBackend)
+  .use(i18nextXhrBackend)
   .use(initReactI18next)
   .use(ICU)
   .init({
