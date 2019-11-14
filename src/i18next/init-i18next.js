@@ -44,7 +44,7 @@ import ICU from "i18next-icu";
         }
       }
     },
-    lng: "es",
+    lng: "en",
     fallbackLng: "en"
   });
 
