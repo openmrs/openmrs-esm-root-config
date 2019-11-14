@@ -6,7 +6,8 @@ module.exports = {
   output: {
     filename: "openmrs-esm-root-config.defaults.js",
     path: path.resolve(__dirname, "dist"),
-    libraryTarget: "system"
+    libraryTarget: "system",
+    jsonpFunction: "webpackJsonp_openmrs_esm_root_config"
   },
   mode: "production",
   module: {
