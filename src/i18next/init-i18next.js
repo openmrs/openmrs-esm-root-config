@@ -3,7 +3,7 @@ import i18nextXhrBackend from "i18next-xhr-backend";
 import { initReactI18next } from "react-i18next";
 import ICU from "i18next-icu";
 
-(i18n.default || i18n)
+export const translationsPromise = (i18n.default || i18n)
   .use(i18nextXhrBackend)
   .use(initReactI18next)
   .use(ICU)
@@ -13,7 +13,9 @@ import ICU from "i18next-icu";
       loadPath: "{{lng}}|{{ns}}",
       ajax(url, options, callback, data) {
         const [language, namespace] = url.split("|");
-        if (namespace && namespace !== "translation") {
+        if (namespace === "translation") {
+          callback(null, { status: 404 });
+        } else {
           System.import(decodeHtmlEntity(namespace))
             .then(m => {
               if (typeof m.importTranslation !== "function") {
@@ -39,8 +41,6 @@ import ICU from "i18next-icu";
               console.error(err);
               callback(null, { status: 404 });
             });
-        } else {
-          callback(null, { status: 404 });
         }
       }
     },
