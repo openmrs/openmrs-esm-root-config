@@ -1,3 +1,4 @@
+import "./i18next/init-i18next.js";
 import { registerApplication } from "single-spa";
 import { coreApplications } from "./single-spa-applications/core-applications";
 

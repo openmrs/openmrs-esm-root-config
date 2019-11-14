@@ -28,6 +28,6 @@ module.exports = {
     },
     disableHostCheck: true
   },
-  externals: ["single-spa"],
+  externals: ["single-spa", "i18next", "react-i18next"],
   plugins: []
 };
