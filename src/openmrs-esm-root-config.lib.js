@@ -1,6 +1,10 @@
 import { registerApplication } from "single-spa";
 import { coreApplications } from "./single-spa-applications/core-applications";
 
+export {
+  translationsPromise as promiseBeforeStart
+} from "./i18next/init-i18next";
+
 export function routePrefix(prefix, location) {
   return location.pathname.startsWith(window.getOpenmrsSpaBase() + prefix);
 }

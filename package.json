@@ -19,7 +19,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint && npm test"
+      "pre-commit": "pretty-quick --staged && concurrently 'npm:lint' 'npm:test'"
     }
   },
   "repository": {
@@ -40,16 +40,20 @@
     "babel-loader": "^8.0.6",
     "browserslist-config-openmrs": "^1.0.0",
     "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.0.0",
     "copyfiles": "^2.1.1",
     "eslint": "^6.3.0",
     "eslint-config-important-stuff": "^1.1.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.0.5",
+    "i18next-icu": "^1.1.2",
+    "i18next-xhr-backend": "^3.2.2",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
+    "react": "^16.11.0",
     "rimraf": "^3.0.0",
     "systemjs-webpack-interop": "^1.1.0",
     "webpack": "^4.39.3",
@@ -57,6 +61,8 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "i18next": "^19.0.0",
+    "react-i18next": "^11.2.1",
     "single-spa": "^4.4.1"
   }
 }
