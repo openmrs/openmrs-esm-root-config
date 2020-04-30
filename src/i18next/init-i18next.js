@@ -1,9 +1,11 @@
 import i18n from "i18next";
 import i18nextXhrBackend from "i18next-xhr-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import ICU from "i18next-icu";
 
 export const translationsPromise = (i18n.default || i18n)
+  .use(LanguageDetector)
   .use(i18nextXhrBackend)
   .use(initReactI18next)
   .use(ICU)
@@ -44,7 +46,6 @@ export const translationsPromise = (i18n.default || i18n)
         }
       }
     },
-    lng: "en",
     fallbackLng: "en"
   });
 
