@@ -4,6 +4,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import ICU from "i18next-icu";
 
+window.i18next = i18n.default || i18n;
+
 export const translationsPromise = (i18n.default || i18n)
   .use(LanguageDetector)
   .use(i18nextXhrBackend)
@@ -45,6 +47,9 @@ export const translationsPromise = (i18n.default || i18n)
             });
         }
       }
+    },
+    detection: {
+      order: ["querystring", "htmlTag", "localStorage", "navigator"]
     },
     fallbackLng: "en"
   });
