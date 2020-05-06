@@ -6,6 +6,17 @@ import ICU from "i18next-icu";
 
 window.i18next = i18n.default || i18n;
 
+const languageChangeObserver = new MutationObserver(() => {
+  window.i18next.changeLanguage().catch(e => {
+    console.error("i18next failed to re-detect language");
+    console.error(e);
+  });
+});
+languageChangeObserver.observe(document.documentElement, {
+  attributeFilter: ["lang"],
+  attributes: true
+});
+
 export const translationsPromise = (i18n.default || i18n)
   .use(LanguageDetector)
   .use(i18nextXhrBackend)
