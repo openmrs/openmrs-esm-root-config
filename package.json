@@ -1,6 +1,6 @@
 {
   "name": "@openmrs/esm-root-config",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A javascript module for setting up and configuring your SPA ",
   "main": "dist/openmrs-esm-root-config.lib.js",
   "scripts": {
