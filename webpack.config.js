@@ -1,34 +1,44 @@
 const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
 
 module.exports = {
   entry: path.resolve(__dirname, "src/openmrs-esm-root-config.defaults.js"),
-  devtool: "sourcemap",
   output: {
     filename: "openmrs-esm-root-config.defaults.js",
-    path: path.resolve(__dirname, "dist"),
     libraryTarget: "system",
-    jsonpFunction: "webpackJsonp_openmrs_esm_root_config"
+    path: path.resolve(__dirname, "dist"),
+    jsonpFunction: "webpackJsonp_openmrs_esm_root_config",
   },
-  mode: "production",
   module: {
     rules: [
       {
         parser: {
-          system: false
-        }
+          system: false,
+        },
       },
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/
-      }
-    ]
+        exclude: /(node_modules|bower_components)/,
+      },
+    ],
   },
+  devtool: "sourcemap",
   devServer: {
     headers: {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
     },
-    disableHostCheck: true
+    disableHostCheck: true,
   },
-  externals: ["single-spa", "i18next", "react-i18next"],
-  plugins: []
+  externals: [
+    "single-spa",
+    "i18next",
+    "react-i18next",
+    "react",
+    "react-dom",
+    /^@openmrs\/esm/,
+  ],
+  plugins: [new CleanWebpackPlugin()],
+  resolve: {
+    extensions: [".ts", ".jsx", ".js"],
+  },
 };
