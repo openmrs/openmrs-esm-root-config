@@ -1,5 +1,5 @@
 export {
-  translationsPromise as promiseBeforeStart,
+  translationsPromise as promiseBeforeStart
 } from "./i18next/init-i18next";
 
 export function routePrefix(prefix, location) {
