@@ -12,6 +12,7 @@ const languageChangeObserver = new MutationObserver(() => {
     console.error(e);
   });
 });
+
 languageChangeObserver.observe(document.documentElement, {
   attributeFilter: ["lang"],
   attributes: true
@@ -26,7 +27,7 @@ export const translationsPromise = (i18n.default || i18n)
     backend: {
       parse: data => data,
       loadPath: "{{lng}}|{{ns}}",
-      ajax(url, options, callback, data) {
+      ajax(url, _, callback) {
         const [language, namespace] = url.split("|");
         if (namespace === "translation") {
           callback(null, { status: 404 });
@@ -49,9 +50,7 @@ export const translationsPromise = (i18n.default || i18n)
 
               return importPromise;
             })
-            .then(json => {
-              callback(json, { status: 200 });
-            })
+            .then(json => callback(json, { status: 200 }))
             .catch(err => {
               console.error(err);
               callback(null, { status: 404 });
