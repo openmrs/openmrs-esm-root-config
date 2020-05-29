@@ -1,5 +1,4 @@
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
 
 module.exports = {
   entry: path.resolve(__dirname, "src/openmrs-esm-root-config.defaults.js"),
@@ -37,7 +36,7 @@ module.exports = {
     "react-dom",
     /^@openmrs\/esm/,
   ],
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [],
   resolve: {
     extensions: [".ts", ".jsx", ".js"],
   },
